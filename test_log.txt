@@ -1,0 +1,1 @@
+[2025-08-28 12:16:48] Epoch   1 | Train Loss: 2.5000 | Val Loss: 2.3000 | Train Acc: 0.6500 | Val Acc: 0.7000 | BLEU: 0.2500
