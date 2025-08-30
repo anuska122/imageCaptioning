@@ -5,23 +5,21 @@ This file contains all the settings for our project.
 
 class Config:
     # MODEL PARAMETERS - These control how smart our model is
-  
-    EMBED_SIZE = 256        # How big our word representations are (bigger = more detail)
-    HIDDEN_SIZE = 512       # How much memory our LSTM has (bigger = remembers more)
-    NUM_LAYERS = 1          # How many LSTM layers (more = more complex)
-    
+    EMBED_SIZE = 256        
+    HIDDEN_SIZE = 512      
+    NUM_LAYERS = 1         
     
     # VOCABULARY SETTINGS - Controls which words we understand
-    VOCAB_THRESHOLD = 5     # A word must appear 5+ times to be included
-    MAX_CAPTION_LENGTH = 50 # Maximum words in a caption
-    
+    VOCAB_THRESHOLD = 5     
+    MAX_CAPTION_LENGTH = 50 
+
     # TRAINING PARAMETERS - Controls how we train
-    BATCH_SIZE = 32         # How many images we process at once
-    LEARNING_RATE = 0.001   # How fast our model learns (smaller = slower but safer)
-    NUM_EPOCHS = 20         # How many times we go through all data
+    BATCH_SIZE = 32        
+    LEARNING_RATE = 0.001   
+    NUM_EPOCHS = 50        
     
     # IMAGE PROCESSING - How we handle images
-    IMAGE_SIZE = 224        # All images resized to 224x224 pixels
+    IMAGE_SIZE = 224       
     
     # DEVELOPMENT vs PRODUCTION - Easy switching
     DEBUG_MODE = False      # True = use small dataset for testing

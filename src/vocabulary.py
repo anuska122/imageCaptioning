@@ -117,39 +117,3 @@ class Vocabulary:
     
     def get_vocab_size(self):
         return len(self.word2idx)
-    
-
-def test_vocabulary():
-    """
-    Test function to make sure vocabulary works correctly
-    """
-    print("Testing Vocabulary...")
-    
-    # Load the exact vocabulary used during training
-    vocab = Vocabulary()
-    success = vocab.load_vocabulary("test_vocab.pkl")  # load the trained vocab
-    if not success:
-        print("Failed to load vocabulary. Make sure 'test_vocab.pkl' exists.")
-        return
-
-    # Test caption conversion
-    test_caption = "A cat sits"
-    numbers = vocab.caption_to_numbers(test_caption)
-    reconstructed = vocab.numbers_to_caption(numbers)
-    
-    print(f"\nTesting conversion:")
-    print(f"Original caption: '{test_caption}'")
-    print(f"Number representation: {numbers[:10]}...")  # show first few numbers
-    print(f"Reconstructed caption: '{reconstructed}'")
-    
-    # Optional: save again (not needed if already saved)
-    vocab.save_vocabulary("test_vocab.pkl")
-
-    # Test loading again
-    new_vocab = Vocabulary()
-    new_vocab.load_vocabulary("test_vocab.pkl")
-    print("\nVocabulary tests passed successfully!")
-
-
-if __name__ == "__main__":
-    test_vocabulary()

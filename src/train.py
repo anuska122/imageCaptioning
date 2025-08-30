@@ -9,7 +9,7 @@ import pandas as pd
 
 def main():
     config = Config()
-    config.set_debug_mode(True)  # Use small dataset for debugging
+    config.set_debug_mode(False)  # True - Use small dataset for debugging
     device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 
     vocab_file = "test_vocab.pkl"

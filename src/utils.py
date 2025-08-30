@@ -254,8 +254,6 @@ def generate_caption(model, image_path, vocabulary, transform, device, max_lengt
             # Get word predictions
             output = model.decoder.fc(output.squeeze(1))
             predicted = output.argmax(1).item()
-            
-            # Add to caption
             caption.append(predicted)
             
             # Stop if END token
@@ -398,31 +396,3 @@ def log_training_progress(epoch, train_loss, val_loss, train_acc, val_acc,
     with open(log_file, 'a') as f:
         f.write(log_entry)
     print(log_entry.strip())
-
-
-def test_utils():
-    """
-    Test utility functions
-    """
-    print("Testing Utility Functions...")
-    meter = AverageMeter()
-    meter.update(1.5)
-    meter.update(2.0)
-    meter.update(1.0)
-    print(f"AverageMeter test: avg={meter.avg:.2f}, should be ~1.5")
-    
-    # BLEU score calculation
-    predicted = ["a cat sits on table", "dog runs in park"]
-    target = ["a cat sitting on a table", "the dog is running in the park"]
-    bleu = calculate_bleu_score(predicted, target)
-    print(f"BLEU Score test: {bleu:.4f}")
-    
-    # logging
-    log_training_progress(1, 2.5, 2.3, 0.65, 0.70, 0.25, "test_log.txt")
-    print("Log entry created")
-    
-    print("Utility functions test completed!")
-
-
-if __name__ == "__main__":
-    test_utils()

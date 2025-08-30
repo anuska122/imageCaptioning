@@ -51,6 +51,6 @@ def generate_caption(image_path, max_len=20):
     return " ".join(caption_words)
 
 if __name__ == "__main__":
-    test_image = "/Users/anushkahadkhale/Desktop/img and nlp/src/rayul-_M6gy9oHgII-unsplash.jpg"
+    test_image = "/Users/anushkahadkhale/Desktop/img and nlp/src/joe-caione-qO-PIF84Vxg-unsplash.jpg"
     caption = generate_caption(test_image)
     print(f"{test_image} -> {caption}")
