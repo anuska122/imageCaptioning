@@ -20,7 +20,7 @@ model = create_model(config, len(vocab))
 model.load_state_dict(torch.load(model_file, map_location=device))
 model.to(device)
 model.eval()
-print("✅ Model and vocabulary loaded successfully!")
+print("Model and vocabulary loaded successfully!")
 
 #IMAGE PREPROCESSING
 transform = transforms.Compose([

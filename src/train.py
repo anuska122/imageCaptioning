@@ -61,7 +61,7 @@ def main():
 
     os.makedirs("models", exist_ok=True)
     torch.save(model.state_dict(), "models/image_caption_model.pth")
-    print("✅ Training finished. Model saved.")
+    print("Training finished. Model saved.")
 
 if __name__ == "__main__":
     main()
